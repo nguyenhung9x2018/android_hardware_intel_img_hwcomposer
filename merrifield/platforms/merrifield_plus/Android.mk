@@ -87,6 +87,9 @@ LOCAL_SRC_FILES += \
 
 LOCAL_C_INCLUDES := $(addprefix $(LOCAL_PATH)/../../../, $(SGX_INCLUDES)) \
     frameworks/native/include/media/openmax \
+    frameworks/native/libs/nativewindow/include \
+    frameworks/native/libs/nativebase/include \
+    frameworks/native/libs/arect/include \
     $(TARGET_OUT_HEADERS)/khronos/openmax \
     frameworks/native/opengl/include \
     hardware/libhardware_legacy/include/hardware_legacy \
