@@ -147,7 +147,11 @@ bool TngDisplayContext::commitEnd(size_t numDisplays, hwc_display_contents_1_t *
 
     VLOGTRACE("count = %d", mCount);
 
+#ifdef PRE_ION_X86
+    if (mIMGDisplayDevice && mCount) {
+#else
     if (mIMGDisplayDevice) {
+#endif
         int err = mIMGDisplayDevice->post(mIMGDisplayDevice,
                                           mImgLayers,
                                           mCount,

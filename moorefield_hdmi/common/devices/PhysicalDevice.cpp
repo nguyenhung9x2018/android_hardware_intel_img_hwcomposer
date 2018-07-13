@@ -126,8 +126,10 @@ bool PhysicalDevice::commit(hwc_display_contents_1_t *display, IDisplayContext *
         return true;
     }
 
+#ifndef PRE_ION_X86
     /* Sync the arguments of Frame Buffer Target layer updated in SurfaceFlinger. */
     mLayerList->updateFBT(display);
+#endif
 
     return context->commitContents(display, mLayerList);
 }
